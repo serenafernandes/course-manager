@@ -8,10 +8,10 @@
 
   .field
     = f.label :student
-    = f.text_field :student
+    = f.select :student, options_from_collection_for_select(Student.all, :id, :name)
   .field
     = f.label :course
-    = f.text_field :course
+    = f.select :course, options_from_collection_for_select(Course.all, :id, :name)
   .field
     = f.label :entry_at
     = f.datetime_select :entry_at
