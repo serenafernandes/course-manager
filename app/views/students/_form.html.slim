@@ -1,18 +1,22 @@
-= form_for @student do |f|
-  - if @student.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@student.errors.count, "error")} prohibited this student from being saved:"
-      ul
-        - @student.errors.full_messages.each do |message|
-          li = message
+.container
+  = form_for @student, :html => {:class => "form-horizontal"}  do |f|
+    - if @student.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@student.errors.count, "error")} prohibited this student from being saved:"
+        ul
+          - @student.errors.full_messages.each do |message|
+            li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :register_number
-    = f.text_field :register_number
-  .field
-    = f.label :status
-    = f.select(:status, Status.to_a)
-  .actions = f.submit
+    .form-group
+      = f.label :name, class: "col-sm-2 control-label"
+      .col-sm-10
+        = f.text_field :name, class: "form-control"
+    .form-group
+      = f.label :register_number, class: "col-sm-2 control-label"
+      .col-sm-10
+        = f.text_field :register_number, class: "form-control"
+    .form-group
+      = f.label :status, class: "col-sm-2 control-label"
+      .col-sm-2
+        = f.select(:status, Status.to_a, {}, { class: "form-control" })
+    .actions = f.submit class: "btn btn-success"

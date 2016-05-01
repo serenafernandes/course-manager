@@ -7,16 +7,16 @@
           - @course.errors.full_messages.each do |message|
             li = message
     .form-group
-      = f.label :name, class: "col-sm-2 col-lg-1 control-label"
+      = f.label :name, class: "col-sm-2 control-label"
       .col-sm-10
         = f.text_field :name, class: "form-control"
     .form-group
-      = f.label :description, class: "col-sm-2 col-lg-1 control-label"
+      = f.label :description, class: "col-sm-2 control-label"
       .col-sm-10
         = f.text_field :description, class: "form-control"
     .form-group
-      = f.label :status, class: "col-sm-2 col-lg-1 control-label"
+      = f.label :status, class: "col-sm-2 control-label"
       .col-sm-2
         = f.select(:status, Status.to_a, {}, { class: "form-control" })
-    .actions.col-sm-offset-2
+    .actions
       = f.submit class: "btn btn-success"
