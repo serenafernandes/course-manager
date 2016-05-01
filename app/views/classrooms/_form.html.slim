@@ -7,15 +7,15 @@
           - @classroom.errors.full_messages.each do |message|
             li = message
     .form-group
-      = f.label :student, class: "col-sm-2 col-lg-1 control-label"
+      = f.label :student, class: "col-sm-2 control-label"
       .col-sm-10
         = f.select(:student, Student.all.collect {|p| [ p.name, p.id ] }, {}, { class: "form-control"})
     .form-group
-      = f.label :course, class: "col-sm-2 col-lg-1 control-label"
+      = f.label :course, class: "col-sm-2 control-label"
       .col-sm-10
         = f.select(:course, Course.all.collect {|p| [ p.name, p.id ] }, {}, { class: "form-control"})
     .form-group
-      = f.label :entry_at, class: "col-sm-2 col-lg-1 control-label"
+      = f.label :entry_at, class: "col-sm-2 control-label"
       .col-sm-10
-        = f.datetime_select :entry_at, class: "form-control"
+        = f.text_field :entry_at, class: "form-control", :data => { provide: 'datepicker'}
     .actions = f.submit
