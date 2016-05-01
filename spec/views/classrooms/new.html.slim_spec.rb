@@ -13,9 +13,9 @@ RSpec.describe "classrooms/new", type: :view do
 
     assert_select "form[action=?][method=?]", classrooms_path, "post" do
 
-      assert_select "input#classroom_student_id[name=?]", "classroom[student_id]"
+    assert_select "input#classroom_student[name=?]", "classroom[student]"
 
-      assert_select "input#classroom_course_id[name=?]", "classroom[course_id]"
+    assert_select "input#classroom_course[name=?]", "classroom[course]"
     end
   end
 end

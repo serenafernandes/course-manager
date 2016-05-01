@@ -16,7 +16,7 @@ RSpec.describe "classrooms/index", type: :view do
 
   it "renders a list of classrooms" do
     render
-    assert_select "tr>td", :text => nil.to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
+    assert_select "tr>td", :text => nil.to_s, :count => 6
+    assert_select "tr>td", :text => nil.to_s, :count => 6
   end
 end
