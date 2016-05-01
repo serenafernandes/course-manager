@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "classrooms/edit", type: :view do
   before(:each) do
-    create(:classroom)
+    @classroom = create(:classroom)
     create(:course)
     create(:course)
     create(:course)

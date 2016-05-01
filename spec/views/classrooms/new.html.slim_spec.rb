@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "classrooms/new", type: :view do
   before(:each) do
-    create(:classroom)
+    @classroom = build(:classroom)
     create(:course)
     create(:course)
     create(:course)
